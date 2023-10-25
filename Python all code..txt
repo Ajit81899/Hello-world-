@@ -1,0 +1,101 @@
+List Comprehension
+
+x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    l = []
+    for i in range(0,x+1):
+        for j in range(0,y+1):
+            for k in range(0,z+1):
+                if(i+j+k != n):
+                    l.append([i,j,k])
+    print(l)
+======================================================
+Find the runner-up score
+
+n=int(input())
+st =[]
+for i in range(0,n):
+    ele = int(input())
+    st.append(ele)
+st.sort()
+print(st[(st.index(max(st)))-1])
+
+======================================================
+
+#Nested list
+
+n=int(input())
+res = []
+grade = []
+for i in range(n):
+    name=input()
+    mark=float(input())
+    res.append([name,mark])
+    grade.append(mark)
+grade=sorted(set(grade))
+m=grade[1]
+name=[]
+for val in res:
+    if m==val[1]:
+        name.append(val[0])
+name.sort()
+for nm in name:
+    print(nm)
+    
+    
+#     5
+# Harry
+# 37.21
+# Berry
+# 37.21
+# Tina
+# 37.2
+# Akriti
+# 41
+# Harsh
+# 3
+================================================
+
+Finding the percentage
+
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        # print(name)
+        # print(line)
+        scores = list(map(float, line))
+        # print(scores)
+        student_marks[name] = scores
+    query_name = input()
+    marks=student_marks[query_name]
+    #print(student_marks)
+    print(format(sum(marks)/3,'.2f'))
+==================================================
+
+
+#list
+
+
+list =[]
+n=int(input())
+for i in range (n):
+    cmd=input().split()
+    if cmd[0]=='insert':
+        list.insert(int(cmd[1]),int(cmd[2]))
+    elif cmd[0]=='print':
+        print(list)
+    elif cmd[0]=='remove':
+        list.remove(int(cmd[1]))
+    elif cmd[0]=='append':
+        list.append(int(cmd[1]))
+    elif cmd[0]=='sort':
+        list.sort()
+    elif cmd[0]=='pop':
+        list.pop()
+    else:
+        list.reverse()
